@@ -4,7 +4,7 @@ import warnings
 
 
 def read_input(filename):
-   """ Function that reads the input.
+   """ Reads the input.
     INPUT: filename (str): name of the file we want to read in. 
            it contains N trees and a last line with a list 
            of species and alelles. 
@@ -47,7 +47,7 @@ def get_clades_pattern(tree,tags):
 
 
 def prune_one_tree(tree,prune_tags):
-    """ Prunes a tree: gets rid of leafs whose prefix is contain in the input
+    """ Prunes a tree: gets rid of leaves whose prefix is contained in prune_tag
      INPUT: 
       - tree : (tree object) tree to be pruned,
       - prune_tag: (list of strings) contains the accesssions we want to prune.
@@ -62,7 +62,7 @@ def prune_one_tree(tree,prune_tags):
 
 
 def prune_trees(trees,prune_tag):
-    """ Prunes a list of trees: gets rid of leafs whose prefix is contain in the input
+    """ Prunes a list of trees: gets rid of leaves whose prefix is contained  prune_tag
      INPUT: 
      - trees : (list of tree objects) trees to be pruned,
      - prune_tag: (list of strings) contains the accesssions we want to prune.
