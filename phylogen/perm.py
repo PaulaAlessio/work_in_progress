@@ -14,7 +14,7 @@ def permutator_major(lst):
     a = lst[0]
     for i in range(1,L):
         pair = [a,lst[i]]
-        rest = my_permutator_major(lst[1:i]+lst[i+1:])
+        rest = permutator_major(lst[1:i]+lst[i+1:])
         for res in rest: 
             result.append( pair + res )
     # Remove possible doubles 

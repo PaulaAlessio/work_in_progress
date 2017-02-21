@@ -1,26 +1,5 @@
 from Bio import Phylo
 import copy
-import warnings
-
-
-def read_input(filename):
-   """ Reads the input.
-    INPUT: filename (str): name of the file we want to read in. 
-           it contains N trees and a last line with a list 
-           of species and alelles. 
-    OUTPUT: a list with two elements 
-       - alleles: string containing the last line of the input file
-       - trees: list of tree objects (generated with Phyloparse) corresponding 
-                to the trees contained in the inputfile.
-   """
-   # Open the file
-   f = open(filename,"r")
-   # Read file linewise
-   tree_str = f.readlines()
-   f.close()
-   alleles = tree_str.pop()
-   trees = list(Phylo.parse(tree_str,"newick"))
-   return alleles,trees
 
 def get_clades_pattern(tree,tags):
     """ Gets clades of a tree that contain at least one of the prefixes in tags

@@ -7,11 +7,18 @@ alleles, trees = read_input(filename)
 clades = trees[0].find_clades()
 
 acc=["LPS119","LPS150","LPS168","LPS189"]
-acc.pop(0)
+current=acc.pop(0)
 
-p_trees = prune_trees(trees,acc)
+ptrees = prune_trees(trees,acc)
 
-header = create_header(p_trees)
 
-print(header)
+phylo_str = Phylonet_input(ptrees,alleles,current,4,1)
+
+print(phylo_str)
+
+#print(header)
+
+
+
+
 
