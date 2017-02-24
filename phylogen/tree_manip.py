@@ -40,17 +40,18 @@ def prune_one_tree(tree,prune_tags):
     return(pruned_tree) 
 
 
-def prune_trees(trees,prune_tag):
-    """ Prunes a list of trees: gets rid of leaves whose prefix is contained  prune_tag
+def prune_trees(trees,prune_tags):
+    """ Prunes a list of trees: gets rid of leaves whose prefix 
+     is contained in prune_tags
      INPUT: 
      - trees : (list of tree objects) trees to be pruned,
-     - prune_tag: (list of strings) contains the accesssions we want to prune.
+     - prune_tags: (list of strings) contains the accesssions we want to prune.
      OUTPUT: 
      - pruned tree: (list of tree objects) pruned trees.
     """
     pruned_trees = []
     for tree in trees:
-        pruned_trees.append(prune_one_tree(tree,prune_tag))
+        pruned_trees.append(prune_one_tree(tree,prune_tags))
     return(pruned_trees)
 
 

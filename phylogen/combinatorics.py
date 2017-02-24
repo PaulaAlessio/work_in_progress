@@ -1,28 +1,28 @@
 import copy, itertools
 
-# Chunk a list into pairs in all possible ways.
-# Input: list
-# Output: list of lists with the possible pairs (ordered in 
-# every list) without repetition
-def permutator_major(lst):
+def get_all_pairs(lst):
+    """ Get pairs of elements in the 
+        list in all possible ways. 
+        INPUT: list of N elements 
+        OUTPUT: list of list of lists containing the pairs
+        Example: lst [0,1,2,3]
+            res  = [ [[0,1], [2,3]],
+                     [[0,2], [1,3]],
+                     [[0,3], [1,2]]
+    """
     result =[]
     L = len(lst)
     if (L%2) :
       raise NameError("Number of elements is odd. Aborting.")
-    if len(lst) < 2:
-        return [lst]
+    if  L  < 2:
+        return [lst] 
     a = lst[0]
     for i in range(1,L):
         pair = [a,lst[i]]
-        rest = permutator_major(lst[1:i]+lst[i+1:])
-        for res in rest: 
-            result.append( pair + res )
-    # Remove possible doubles 
-    for i in range(len(result)-1,-1,-1):
-        if result[i] in result[0:i]:
-           result.pop(i) 
+        rest = get_all_pairs(lst[1:i]+lst[i+1:])
+        for res in rest:
+            result.append(copy.deepcopy([pair] + res))
     return result 
-
 
 
 

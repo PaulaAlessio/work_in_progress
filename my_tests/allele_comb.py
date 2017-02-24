@@ -9,8 +9,7 @@ def get_all_pairs(lst):
             res  = [ [[0,1], [2,3]],
                      [[0,2], [1,3]],
                      [[0,3], [1,2]]
-        """
-          
+    """
     result =[]
     L = len(lst)
     if (L%2) :
@@ -24,6 +23,7 @@ def get_all_pairs(lst):
         for res in rest:
             result.append(copy.deepcopy([pair] + res))
     return result 
+
 
 def rm_dbl_splitting(all_pairs,splitting):
     """ Treating alelles combinations in the case where 
